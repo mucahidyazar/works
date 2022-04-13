@@ -37,15 +37,9 @@ export const productDetail = createSlice({
       // immutable state based off those changes
       state.selected = action.payload
     },
-    decrement: state => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
   },
   extraReducers: {
-    [fetchData.pending]: (state, action) => {
+    [fetchData.pending]: state => {
       state.status = Status.LOADING
     },
     [fetchData.fulfilled]: (state, action) => {
@@ -61,7 +55,6 @@ export const productDetail = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {setNewSelected, decrement, incrementByAmount} =
-  productDetail.actions
+export const {setNewSelected} = productDetail.actions
 
 export default productDetail.reducer

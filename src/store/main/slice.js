@@ -1,6 +1,6 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
-import {Status, Theme} from '@constants'
+import {Theme} from '@constants'
 
 const initialState = {
   theme: Theme.LIGHT,

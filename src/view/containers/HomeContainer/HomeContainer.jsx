@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import Select from 'react-select'
 import {useDispatch, useSelector} from 'react-redux'
-import _ from 'lodash'
 import {useParams, Link} from 'react-router-dom'
 import {toast} from 'react-toastify'
 
@@ -17,7 +16,7 @@ import {Status} from '@constants'
 
 import * as S from './style'
 
-function HomeContainer() {
+export default function HomeContainer() {
   const dispatch = useDispatch()
   const productDetail = useSelector(selectProductDetailSelected)
   const productDetailData = useSelector(selectProductDetailData)
@@ -129,16 +128,15 @@ function HomeContainer() {
                   value={
                     options && options[attribute?.label]
                       ? {
-                          value: options[attribute.label],
-                          label: options[attribute.label],
-                        }
+                        value: options[attribute.label],
+                        label: options[attribute.label],
+                      }
                       : ''
                   }
                 />
               </S.ProductMenuOption>
             ))}
           </S.ProductMenuOptions>
-          {/* <S.ProductMenuOption></S.ProductMenuOption> */}
           <S.ProductMenuButton disabled={!orderable || !!error}>
             Accept
           </S.ProductMenuButton>

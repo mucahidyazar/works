@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 
 import {Breakpoint} from '@constants'
 import {Button} from '@ui'

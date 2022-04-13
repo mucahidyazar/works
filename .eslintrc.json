@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "import", "jsx-a11y"],
+  "rules": {
+    "react/prop-types": 0,
+    "indent": ["error", 2],
+    "linebreak-style": 1,
+    "quotes": ["error", "single"],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src", "@constants"],
+        "extensions": [".js", ".jsx"]
+      },
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["@config", "./src/config"],
+          ["@constants", "./src/constants"],
+          ["@pages", "./src/pages"],
+          ["@public", "./src/public"],
+          ["@store", "./src/store"],
+          ["@styles", "./src/styles"],
+          ["@utils", "./src/utils"],
+          ["@components", "./src/view/components"],
+          ["@containers", "./src/view/containers"],
+          ["@ui", "./src/view/ui"]
+        ],
+
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  }
+}
