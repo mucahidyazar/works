@@ -3,3 +3,4 @@
 
 yarn lint:js
 yarn lint:prettier
+yarn test

@@ -6,15 +6,23 @@
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "import", "jsx-a11y"],
+  "plugins": ["react", "import", "jsx-a11y", "jest"],
   "rules": {
     "react/prop-types": 0,
     "indent": ["error", 2],
     "linebreak-style": 1,
     "quotes": ["error", "single"],
+    "prettier/prettier": ["error", { "singleQuote": true }],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+
+    //for jest
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   },
   "parserOptions": {
     "ecmaVersion": 2021,
@@ -26,7 +34,8 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "settings": {
     "react": {
@@ -56,5 +65,5 @@
       }
     }
   },
-  "ignorePatterns": ["vite.config.js"]
+  "ignorePatterns": ["*.config.js"]
 }
