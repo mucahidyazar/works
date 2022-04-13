@@ -55,5 +55,6 @@
         "extensions": [".js", ".jsx"]
       }
     }
-  }
+  },
+  "ignorePatterns": ["vite.config.js"]
 }
