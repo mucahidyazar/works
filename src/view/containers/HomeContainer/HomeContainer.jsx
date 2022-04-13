@@ -1,58 +1,58 @@
-import {useEffect, useState} from 'react'
-import Select from 'react-select'
-import {useDispatch, useSelector} from 'react-redux'
-import {useParams, Link} from 'react-router-dom'
-import {toast} from 'react-toastify'
+import { useEffect, useState } from 'react';
+import Select from 'react-select';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-import {fetchData, setNewSelected} from '@store/product-detail/slice'
+import { fetchData, setNewSelected } from '@store/product-detail/slice';
 import {
   selectAllAttributes,
   selectProductDetailData,
   selectProductDetailSelected,
-  selectProductDetailStatus,
-} from '@store/product-detail/selectors'
-import {FullPageLoading, Header} from '@components'
-import {Status} from '@constants'
+  selectProductDetailStatus
+} from '@store/product-detail/selectors';
+import { FullPageLoading, Header } from '@components';
+import { Status } from '@constants';
 
-import * as S from './style'
+import * as S from './style';
 
 export default function HomeContainer() {
-  const dispatch = useDispatch()
-  const productDetail = useSelector(selectProductDetailSelected)
-  const productDetailData = useSelector(selectProductDetailData)
-  const productDetailStatus = useSelector(selectProductDetailStatus)
-  const allAttributes = useSelector(selectAllAttributes)
+  const dispatch = useDispatch();
+  const productDetail = useSelector(selectProductDetailSelected);
+  const productDetailData = useSelector(selectProductDetailData);
+  const productDetailStatus = useSelector(selectProductDetailStatus);
+  const allAttributes = useSelector(selectAllAttributes);
 
-  const [options, setOptions] = useState(null)
-  const [error, setError] = useState(null)
+  const [options, setOptions] = useState(null);
+  const [error, setError] = useState(null);
 
-  const {merchantCode, productCode} = useParams()
+  const { merchantCode, productCode } = useParams();
 
   useEffect(() => {
-    dispatch(fetchData({merchantCode, productCode}))
-  }, [merchantCode, productCode])
+    dispatch(fetchData({ merchantCode, productCode }));
+  }, [merchantCode, productCode]);
 
   useEffect(() => {
     if (options) {
-      const newSelected = productDetailData.skus.find(sku => {
+      const newSelected = productDetailData.skus.find((sku) => {
         // sku.attrs = {Color: 'White Cap', Size: '35', Dimension: '30'}
         // options = { Color: 'White Cap', Size: '35' }
         return Object.entries(options).every(([key, value]) => {
-          if (sku.attrs[key] !== value) return false
-          return true
-        })
-      })
+          if (sku.attrs[key] !== value) return false;
+          return true;
+        });
+      });
       if (newSelected) {
-        setError(null)
-        dispatch(setNewSelected(newSelected))
+        setError(null);
+        dispatch(setNewSelected(newSelected));
       } else {
-        setError('No product found')
+        setError('No product found');
       }
     }
-  }, [options])
+  }, [options]);
 
   if (productDetailStatus === Status.LOADING) {
-    return <FullPageLoading />
+    return <FullPageLoading />;
   }
 
   if (!productDetail) {
@@ -62,23 +62,23 @@ export default function HomeContainer() {
           <S.NoProductButton>Return a product</S.NoProductButton>
         </Link>
       </S.NoProduct>
-    )
+    );
   }
 
-  const {name, shortDesc, images, url, orderable} = productDetail
+  const { name, shortDesc, images, url, orderable } = productDetail;
 
   const changeHandler = (selectedOption, label) => {
-    setOptions(prev => ({
+    setOptions((prev) => ({
       ...prev,
-      [label]: selectedOption.value,
-    }))
-  }
+      [label]: selectedOption.value
+    }));
+  };
 
-  const submitHandler = e => {
-    e.preventDefault()
+  const submitHandler = (e) => {
+    e.preventDefault();
 
     if (!options || Object.keys(options).length !== allAttributes.length) {
-      toast.error('Please select all attributes')
+      toast.error('Please select all attributes');
     } else {
       toast('🦄 Wow so easy! You accepted it!', {
         position: 'top-right',
@@ -87,11 +87,11 @@ export default function HomeContainer() {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined,
-      })
-      setOptions(null)
+        progress: undefined
+      });
+      setOptions(null);
     }
-  }
+  };
 
   return (
     <S.ProductDetailContainer>
@@ -99,15 +99,10 @@ export default function HomeContainer() {
 
       <S.ProductContent onSubmit={submitHandler}>
         <S.ProductInfo>
-          <S.ProductImage
-            src={images[0]?.url || images[0]}
-            alt="Product Image"
-          />
+          <S.ProductImage src={images[0]?.url || images[0]} alt="Product Image" />
           <S.ProductDetail>
             <S.ProductDetailTitle>Product Detail</S.ProductDetailTitle>
-            <S.ProductDetailDescription
-              dangerouslySetInnerHTML={{__html: shortDesc}}
-            />
+            <S.ProductDetailDescription dangerouslySetInnerHTML={{ __html: shortDesc }} />
           </S.ProductDetail>
         </S.ProductInfo>
 
@@ -116,30 +111,23 @@ export default function HomeContainer() {
             {name}
           </S.ProductMenuTitle>
           <S.ProductMenuOptions>
-            {allAttributes?.map(attribute => (
+            {allAttributes?.map((attribute) => (
               <S.ProductMenuOption key={attribute.label}>
-                <S.ProductMenuOptionTitle>
-                  {attribute.label}
-                </S.ProductMenuOptionTitle>
+                <S.ProductMenuOptionTitle>{attribute.label}</S.ProductMenuOptionTitle>
                 <Select
                   options={attribute.options}
                   isSearchable={false}
-                  onChange={option => changeHandler(option, attribute.label)}
+                  onChange={(option) => changeHandler(option, attribute.label)}
                   value={
                     options && options[attribute?.label]
-                      ? {
-                        value: options[attribute.label],
-                        label: options[attribute.label],
-                      }
+                      ? { value: options[attribute.label], label: options[attribute.label] }
                       : ''
                   }
                 />
               </S.ProductMenuOption>
             ))}
           </S.ProductMenuOptions>
-          <S.ProductMenuButton disabled={!orderable || !!error}>
-            Accept
-          </S.ProductMenuButton>
+          <S.ProductMenuButton disabled={!orderable || !!error}>Accept</S.ProductMenuButton>
           {error && <S.ProductErrorMessage>{error}</S.ProductErrorMessage>}
           {!orderable && (
             <S.ProductErrorMessage>
@@ -149,7 +137,7 @@ export default function HomeContainer() {
         </S.ProductMenu>
       </S.ProductContent>
     </S.ProductDetailContainer>
-  )
+  );
 }
 
-export {HomeContainer}
+export { HomeContainer };

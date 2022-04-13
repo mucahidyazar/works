@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Spinner = styled.div`
   display: inline-block;
@@ -34,9 +34,9 @@ const Spinner = styled.div`
       opacity: 0;
     }
   }
-`
+`;
 
-const SpinnerOne = styled.div``
-const SpinnerTwo = styled.div``
+const SpinnerOne = styled.div``;
+const SpinnerTwo = styled.div``;
 
-export {Spinner, SpinnerOne, SpinnerTwo}
+export { Spinner, SpinnerOne, SpinnerTwo };

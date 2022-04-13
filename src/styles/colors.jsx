@@ -1,4 +1,4 @@
-import {css} from 'styled-components'
+import { css } from 'styled-components';
 
 export const defaultColors = css`
   --color-primary: #e9b258;
@@ -20,7 +20,7 @@ export const defaultColors = css`
 
   // Scrollbar
   --color-scrollbar: #f5f5f5;
-`
+`;
 
 export const darkColors = css`
   :root {
@@ -35,7 +35,7 @@ export const darkColors = css`
     background: var(--color-background-black);
     color: var(--color-black);
   }
-`
+`;
 
 export const dimColors = css`
   :root {
@@ -50,4 +50,4 @@ export const dimColors = css`
     background: var(--color-background-dim);
     color: var(--color-black);
   }
-`
+`;

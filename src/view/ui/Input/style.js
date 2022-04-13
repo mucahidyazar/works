@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components';
 
 const Input = styled.input`
   width: 100%;
@@ -7,9 +7,9 @@ const Input = styled.input`
   border: none;
   border: 1px solid var(--color-primary);
 
-  ${({disabled}) => css`
+  ${({ disabled }) => css`
     opacity: ${disabled ? 0.5 : 1};
   `}
-`
+`;
 
-export {Input}
+export { Input };

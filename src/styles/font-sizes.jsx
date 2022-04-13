@@ -1,4 +1,4 @@
-import {css} from 'styled-components'
+import { css } from 'styled-components';
 
 export const fontSizes = css`
   --font-size-2xs: 0.51rem;
@@ -11,4 +11,4 @@ export const fontSizes = css`
   --font-size-3xl: 2.4rem;
   --font-size-4xl: 3rem;
   --font-size-5xl: 3.9rem;
-`
+`;

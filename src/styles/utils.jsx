@@ -1,12 +1,12 @@
-import {css} from 'styled-components'
+import { css } from 'styled-components';
 
-import {Breakpoint} from '../constants'
+import { Breakpoint } from '../constants';
 
 export const container = css`
   width: 90%;
   max-width: ${Breakpoint.DESKTOP.MAX}px;
   margin: 0 auto;
-`
+`;
 
 export const titleHover = css`
   cursor: pointer;
@@ -32,7 +32,7 @@ export const titleHover = css`
     transform: rotateZ(-2deg);
     animation: expansing 0.5s ease-in-out forwards;
   }
-`
+`;
 
 export const titleHover2 = css`
   position: relative;
@@ -53,4 +53,4 @@ export const titleHover2 = css`
       width: 100%;
     }
   }
-`
+`;

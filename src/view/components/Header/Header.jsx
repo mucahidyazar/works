@@ -1,60 +1,60 @@
-import {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import {Theme} from '@constants'
-import {fetchData} from '@store/product-detail/slice'
-import {setTheme} from '@store/main/slice'
+import { Theme } from '@constants';
+import { fetchData } from '@store/product-detail/slice';
+import { setTheme } from '@store/main/slice';
 
-import * as S from './style'
+import * as S from './style';
 
 export default function Header() {
-  const dispatch = useDispatch()
-  const theme = useSelector(state => state.main.theme)
-  const {merchantCode, productCode} = useParams()
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.main.theme);
+  const { merchantCode, productCode } = useParams();
   const [state, setState] = useState({
     merchantCode,
-    productCode,
-  })
+    productCode
+  });
 
   // set theme with localStorage
-  const setThemeHandler = selectedTheme => {
-    localStorage.setItem('theme', selectedTheme)
-    dispatch(setTheme(selectedTheme))
-  }
+  const setThemeHandler = (selectedTheme) => {
+    localStorage.setItem('theme', selectedTheme);
+    dispatch(setTheme(selectedTheme));
+  };
 
   useEffect(() => {
-    const localTheme = localStorage.getItem('theme')
+    const localTheme = localStorage.getItem('theme');
 
     if (localTheme) {
-      dispatch(setTheme(localTheme))
+      dispatch(setTheme(localTheme));
     }
-  }, [])
+  }, []);
 
-  const changeHandler = e => {
-    const {name, value} = e.currentTarget
+  const changeHandler = (e) => {
+    const { name, value } = e.currentTarget;
 
-    setState(prev => ({
+    setState((prev) => ({
       ...prev,
-      [name]: value,
-    }))
-  }
+      [name]: value
+    }));
+  };
 
-  const submitHandler = e => {
-    e.preventDefault()
+  const submitHandler = (e) => {
+    e.preventDefault();
 
-    var formData = new FormData(e.target)
+    var formData = new FormData(e.target);
 
-    formData.get('merchantCode')
-    formData.get('productCode')
+    formData.get('merchantCode');
+    formData.get('productCode');
 
-    const mercCode = formData.get('merchantCode')
-    const prodCode = formData.get('productCode')
+    const mercCode = formData.get('merchantCode');
+    const prodCode = formData.get('productCode');
 
     if (mercCode && prodCode) {
-      dispatch(fetchData({merchantCode: mercCode, productCode: prodCode}))
+      dispatch(fetchData({ merchantCode: mercCode, productCode: prodCode }));
     }
-  }
+  };
 
   return (
     <S.ProductHeader>
@@ -75,7 +75,7 @@ export default function Header() {
         <S.ProductStoreButton>Search</S.ProductStoreButton>
       </S.ProductStore>
       <S.ProductTheme>
-        {Object.keys(Theme).map(key => (
+        {Object.keys(Theme).map((key) => (
           <S.ProductThemeItem
             key={key}
             background={key}
@@ -85,5 +85,5 @@ export default function Header() {
         ))}
       </S.ProductTheme>
     </S.ProductHeader>
-  )
+  );
 }

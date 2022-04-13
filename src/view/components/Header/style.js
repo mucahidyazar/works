@@ -1,7 +1,7 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import {Breakpoint, Theme} from '@constants'
-import {Button, Input} from '@ui'
+import { Breakpoint, Theme } from '@constants';
+import { Button, Input } from '@ui';
 
 const ProductHeader = styled.div`
   border-bottom: 1px solid #000;
@@ -14,7 +14,7 @@ const ProductHeader = styled.div`
     flex-direction: column;
     height: auto;
   }
-`
+`;
 const ProductTheme = styled.div`
   position: absolute;
   top: 0;
@@ -25,7 +25,7 @@ const ProductTheme = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 2px;
-`
+`;
 const ProductThemeItem = styled.div`
   height: 100%;
   flex-grow: 1;
@@ -36,31 +36,31 @@ const ProductThemeItem = styled.div`
     height: 300%;
   }
 
-  ${({isSelected}) =>
+  ${({ isSelected }) =>
     isSelected &&
     css`
       height: 300%;
     `}
 
-  ${({background}) => {
+  ${({ background }) => {
     if (background === Theme.LIGHT) {
       return css`
         background-color: var(--color-background-white);
         border: 1px solid var(--color-background-black);
-      `
+      `;
     } else if (background === Theme.DARK) {
       return css`
         background-color: var(--color-background-black);
         border: 1px solid var(--color-background-white);
-      `
+      `;
     } else if (background === Theme.DIM) {
       return css`
         background-color: var(--color-background-dim);
         border: 1px solid var(--color-background-white);
-      `
+      `;
     }
   }}
-`
+`;
 const ProductHeaderName = styled.div`
   text-align: center;
   font-size: var(--font-size-3xl);
@@ -85,7 +85,7 @@ const ProductHeaderName = styled.div`
       margin: 20px 0;
     }
   }
-`
+`;
 const ProductStore = styled.form`
   display: flex;
   align-items: center;
@@ -96,10 +96,10 @@ const ProductStore = styled.form`
   @media (max-width: ${Breakpoint.MOBILE.MAX}px) {
     flex-direction: column;
   }
-`
-const ProductStoreMerchant = styled(Input)``
-const ProductStoreProducts = styled(Input)``
-const ProductStoreButton = styled(Button)``
+`;
+const ProductStoreMerchant = styled(Input)``;
+const ProductStoreProducts = styled(Input)``;
+const ProductStoreButton = styled(Button)``;
 
 export {
   ProductHeader,
@@ -109,5 +109,5 @@ export {
   ProductStore,
   ProductStoreMerchant,
   ProductStoreProducts,
-  ProductStoreButton,
-}
+  ProductStoreButton
+};

@@ -1,4 +1,4 @@
-import * as S from './style'
+import * as S from './style';
 
 export default function Spinner() {
   return (
@@ -6,5 +6,5 @@ export default function Spinner() {
       <S.SpinnerOne></S.SpinnerOne>
       <S.SpinnerTwo></S.SpinnerTwo>
     </S.Spinner>
-  )
+  );
 }

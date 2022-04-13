@@ -1,10 +1,10 @@
-import {createGlobalStyle, keyframes} from 'styled-components'
+import { createGlobalStyle, keyframes } from 'styled-components';
 
-import {Theme, ZIndex} from '../constants'
+import { Theme, ZIndex } from '../constants';
 
-import {defaultColors, darkColors, dimColors} from './colors'
-import {fontSizes} from './font-sizes'
-import {lineHeights} from './line-heights'
+import { defaultColors, darkColors, dimColors } from './colors';
+import { fontSizes } from './font-sizes';
+import { lineHeights } from './line-heights';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
@@ -129,9 +129,9 @@ export const GlobalStyle = createGlobalStyle`
     transition: all 500ms;
   }
 
-  ${({theme}) => theme === Theme.DARK && darkColors}
-  ${({theme}) => theme === Theme.DIM && dimColors}
-`
+  ${({ theme }) => theme === Theme.DARK && darkColors}
+  ${({ theme }) => theme === Theme.DIM && dimColors}
+`;
 
 const fade = keyframes`
   from {
@@ -140,7 +140,7 @@ const fade = keyframes`
   to {
     opacity: 1;
   }
-`
+`;
 
 export const BackDropStyle = createGlobalStyle`
   body {
@@ -158,4 +158,4 @@ export const BackDropStyle = createGlobalStyle`
     background-color: rgba(24, 17, 45, 0.72);
     animation: ${fade} 0.2s linear alternate;
   }
-`
+`;

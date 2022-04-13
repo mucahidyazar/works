@@ -1,11 +1,11 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import Home from './pages/home'
-import {GlobalStyle} from './styles/GlobalStyle'
+import Home from './pages/home';
+import { GlobalStyle } from './styles/GlobalStyle';
 
 function App() {
-  const theme = useSelector(state => state.main.theme)
+  const theme = useSelector((state) => state.main.theme);
 
   return (
     <BrowserRouter>
@@ -15,7 +15,7 @@ function App() {
 
       <GlobalStyle theme={theme} />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

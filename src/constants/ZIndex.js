@@ -1,1 +1,1 @@
-export const ZIndex = {}
+export const ZIndex = {};

@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   width: 100%;
@@ -10,9 +10,9 @@ const Button = styled.button`
   color: var(--color-white);
   font-weight: 600;
 
-  ${({disabled}) => css`
+  ${({ disabled }) => css`
     opacity: ${disabled ? 0.5 : 1};
   `}
-`
+`;
 
-export {Button}
+export { Button };

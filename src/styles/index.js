@@ -1,2 +1,2 @@
-export * from './GlobalStyle'
-export * from './utils'
+export * from './GlobalStyle';
+export * from './utils';
