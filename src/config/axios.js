@@ -7,12 +7,14 @@ const cache = setupCache({
   maxAge: 60 * 60 * 1000
 });
 
+// ignore eslint below
 // Create `axios` instance passing the newly created `cache.adapter`
 export const api = axios.create({
   adapter: cache.adapter,
   baseURL: 'https://api-dev.smartgiftit.com/apps/products',
   headers: {
-    'x-smartgift-app-id': 'zOdeE81mInZIiPLrdHRd0IVZ1a2vv42p6tvh8SX3',
-    'x-smartgift-app-secret': 'ldPn67Cf7e0NboidnQ30KTtrfD1nqPpoSqs69EfH'
+    // eslint-disable-next-line
+    'x-smartgift-app-id': import.meta.env.VITE_SMARTGIFT_APP_ID,
+    'x-smartgift-app-secret': import.meta.env.VITE_SMARTGIFT_APP_SECRET
   }
 });

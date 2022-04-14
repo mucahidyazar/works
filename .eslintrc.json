@@ -65,5 +65,5 @@
       }
     }
   },
-  "ignorePatterns": ["*.config.js"]
+  "ignorePatterns": ["**/node_modules/**", "**/dist/**", "*.config.js"]
 }
