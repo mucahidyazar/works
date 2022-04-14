@@ -1,14 +1,14 @@
 <div align="center">
 
-[![license](https://img.shields.io/github/license/mucahidyazar/mucahid.dev?color=dfd)](LICENSE)
+[![license](https://img.shields.io/github/license/mucahidyazar/smartgift?color=dfd)](LICENSE)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 ![](https://img.shields.io/github/repo-size/mucahidyazar/smartgift?label=Repo%20size&style=flat-square)
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-[Demo](https://mucahid.dev) •
-[Documentation](https://github.com/mucahidyazar/mucahid.dev) •
-[Installation Instructions](https://github.com/mucahidyazar/mucahid.dev) •
-[Reporting Issues](https://github.com/mucahidyazar/mucahid.dev/pulls)
+[Demo](https://smartgift.vercel.app/) •
+[Documentation](https://github.com/mucahidyazar/smartgift) •
+[Installation Instructions](https://github.com/mucahidyazar/smartgift) •
+[Reporting Issues](https://github.com/mucahidyazar/smartgift/pulls)
 
 </div>
 
@@ -123,7 +123,7 @@ yarn && yarn dev
 
 - [https://github.com/typicode/husky](https://github.com/typicode/husky)
 
-- [https://github.com/mucahidyazar/mucahid.dev](https://github.com/mucahidyazar/mucahid.dev)
+- [https://github.com/mucahidyazar/smartgift](https://github.com/mucahidyazar/smartgift)
 
 - [https://vueschool.io/articles/vuejs-tutorials/import-aliases-in-vite/](https://vueschool.io/articles/vuejs-tutorials/import-aliases-in-vite/)
 
