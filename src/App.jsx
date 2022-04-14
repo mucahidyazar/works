@@ -10,8 +10,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route path="/:merchantCode/:productCode" element={<Home />} />
+        <Route path="/*" element={<Home />} exact />
+        <Route path="/:merchantCode/:productCode" element={<Home />} exact />
       </Routes>
 
       <GlobalStyle theme={theme} />
