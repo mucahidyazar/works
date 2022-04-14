@@ -26,7 +26,7 @@ export default function HomeContainer() {
   const [options, setOptions] = useState(null);
   const [error, setError] = useState(null);
 
-  const { merchantCode, productCode } = useParams();
+  const { merchantCode = 'vineyardvines', productCode = '196286139913' } = useParams();
 
   useEffect(() => {
     dispatch(fetchData({ merchantCode, productCode }));
