@@ -13,7 +13,8 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  ${({ background = '/png/news-1.png' }) =>
+  background: url('/png/news-1.png') 50% 50% no-repeat;
+  ${({ background }) =>
     background &&
     css`
       background: url(${background}) 50% 50% no-repeat;
