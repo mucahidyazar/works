@@ -14,6 +14,7 @@
           "@store": "./src/store",
           "@styles": "./src/styles",
           "@utils": "./src/utils",
+          "@hooks": "./src/hooks",
           "@components": "./src/view/components",
           "@containers": "./src/view/containers",
           "@ui": "./src/view/ui"

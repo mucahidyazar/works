@@ -15,9 +15,11 @@ export default defineConfig({
       '@store': path.resolve(__dirname, './src/store'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
       '@components': path.resolve(__dirname, './src/view/components'),
       '@containers': path.resolve(__dirname, './src/view/containers'),
       '@ui': path.resolve(__dirname, './src/view/ui')
     }
-  }
+  },
+  publicDir: './src/public'
 });

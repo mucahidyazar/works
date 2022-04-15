@@ -4,6 +4,9 @@ export const defaultColors = css`
   --color-primary: #e9b258;
 
   --color-white: #fff;
+  --color-gray-light: #f5f5f5;
+  --color-gray-medium: #e5e5e5;
+  --color-gray-dark: #ccc;
   --color-black: #000;
 
   --color-background-dim: #313944;

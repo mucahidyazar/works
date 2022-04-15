@@ -11,13 +11,17 @@ const initialState = {
   error: null
 };
 
-export const fetchData = createAsyncThunk('data/getData', async ({ merchantCode, productCode }) => {
-  const res = await api.get(`?merchantCode=${merchantCode}&codes[]=${productCode}`);
+export const getArticles = createAsyncThunk('articles/get', async ({ page = 1, query = '' }) => {
+  try {
+    const { data } = await api.get(
+      `/articlesearch.json?page=${page}&q=${query}&fq=document_type:("article")&fl=_id&fl=web_url&fl=abstract&fl=multimedia&fl=pub_date&api-key=${
+        import.meta.env.VITE_NYT_API_KEY
+      }`
+    );
 
-  if (res.data.data?.length) {
-    return res?.data?.data;
-  } else {
-    toast.error('Product not found');
+    return data.response;
+  } catch (error) {
+    toast.error(error.message);
   }
 });
 
@@ -34,15 +38,15 @@ export const productDetail = createSlice({
     }
   },
   extraReducers: {
-    [fetchData.pending]: (state) => {
+    [getArticles.pending]: (state) => {
       state.status = Status.LOADING;
     },
-    [fetchData.fulfilled]: (state, action) => {
+    [getArticles.fulfilled]: (state, action) => {
       state.status = Status.OK;
       state.data = action.payload;
       state.selected = action.payload[0];
     },
-    [fetchData.rejected]: (state, action) => {
+    [getArticles.rejected]: (state, action) => {
       state.status = Status.ERROR;
       state.error = action.payload;
     }

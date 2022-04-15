@@ -1,12 +1,17 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { Pagination as StyledPagination } from '@ui';
+import { Button } from '@ui';
+import { css } from 'styled-components';
 
-const HomeContainer = styled.div`
+const ArticleContainer = styled.div`
   width: 1024px;
   height: 100vh;
   margin: 0 auto;
   padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 const Background = styled.div`
   position: fixed;
@@ -30,7 +35,7 @@ const BackgroundImage = styled.div`
   height: 100%;
   background: rgb(0, 0, 0);
   background: linear-gradient(
-    90deg,
+    0deg,
     rgba(0, 0, 0, 1) 20%,
     rgba(0, 0, 0, 0.8) 60%,
     rgba(0, 0, 0, 0.2) 100%
@@ -86,46 +91,26 @@ const News = styled.article`
   transition: all 0.3s ease;
   margin-bottom: 4px;
   cursor: pointer;
-
-  &:hover {
-    outline: 1px solid var(--color-primary);
-    outline-offset: 6px;
-  }
 `;
-const NewsImage = styled.img`
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  margin-bottom: 4px;
-  border-radius: 2px;
+const NewsContent = styled.div`
+  text-align: center;
 `;
-const NewsContent = styled.div``;
 const NewsTitle = styled.h2`
   font-size: var(--font-size);
   margin-bottom: 4px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 const NewsDate = styled.p`
   color: var(--color-gray-dark);
   font-size: var(--font-size-xs);
+  margin-bottom: 40px;
 `;
 
-const PaginationWrapper = styled.div`
-  width: 400px;
-  margin: 0 auto;
-  padding: 40px 0;
+const Back = styled(Button)`
+  width: 280px;
 `;
-const Pagination = styled(StyledPagination)``;
 
 export {
-  HomeContainer,
+  ArticleContainer,
   Background,
   BackgroundImage,
   Header,
@@ -135,10 +120,8 @@ export {
   Slogan,
   NewsList,
   News,
-  NewsImage,
   NewsContent,
   NewsTitle,
   NewsDate,
-  PaginationWrapper,
-  Pagination
+  Back
 };
