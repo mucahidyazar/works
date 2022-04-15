@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { getArticles } from '@store/articles/slice';
 import { selectArticlesData, selectArticlesStatus } from '@store/articles/selectors';
@@ -61,7 +62,15 @@ export default function HomeContainer() {
             onMouseEnter={() => mouseEnterHandler({ ...article, background: image })}
           >
             <Link to={`/${id}`}>
-              <S.NewsImage src={image} />
+              <LazyLoadImage
+                src={image}
+                alt={image}
+                width="100%"
+                height={240}
+                delayMethod="debounce"
+                effect="blur"
+                delayTime={1000}
+              />
               <S.NewsContent>
                 <S.NewsTitle>{article?.abstract}</S.NewsTitle>
                 <S.NewsDate>{moment(article?.pub_date).startOf('day').fromNow()}</S.NewsDate>
@@ -80,7 +89,9 @@ export default function HomeContainer() {
         <S.BackgroundImage />
       </S.Background>
       <S.Header>
-        <S.HeaderLogo>NEWS</S.HeaderLogo>
+        <Link to="/">
+          <S.HeaderLogo>NEWS</S.HeaderLogo>
+        </Link>
 
         <S.NewsSearch>
           <S.NewsSearchInput placeholder="Search" onChange={searchHandler} />

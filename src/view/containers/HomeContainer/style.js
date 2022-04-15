@@ -1,11 +1,9 @@
 import styled, { css } from 'styled-components';
 
 import { Pagination as StyledPagination } from '@ui';
+import { Breakpoint } from '@constants';
 
 const HomeContainer = styled.div`
-  width: 1024px;
-  height: 100vh;
-  margin: 0 auto;
   padding: 40px 0;
 `;
 const Background = styled.div`
@@ -15,7 +13,7 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  ${({ background }) =>
+  ${({ background = '/png/news-1.png' }) =>
     background &&
     css`
       background: url(${background}) 50% 50% no-repeat;
@@ -41,6 +39,11 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${Breakpoint.MOBILE.MAX}px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 const HeaderLogo = styled.h1`
   font-weight: 600;
@@ -56,10 +59,15 @@ const Slogan = styled.h1`
   color: var(--color-gray-dark);
   font-size: var(--font-size-xl);
   text-align: center;
+  padding: 160px 0;
 `;
 
 const NewsSearch = styled.div`
   width: 400px;
+
+  @media (max-width: ${Breakpoint.MOBILE.MAX}px) {
+    width: 100%;
+  }
 `;
 const NewsSearchInput = styled.input`
   background: transparent;
@@ -121,6 +129,10 @@ const PaginationWrapper = styled.div`
   width: 400px;
   margin: 0 auto;
   padding: 40px 0;
+
+  @media (max-width: ${Breakpoint.MOBILE.MAX}px) {
+    width: 100%;
+  }
 `;
 const Pagination = styled(StyledPagination)``;
 

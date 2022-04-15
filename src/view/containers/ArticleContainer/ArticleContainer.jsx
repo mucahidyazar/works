@@ -35,9 +35,9 @@ export default function ArticleContainer() {
         <S.BackgroundImage />
       </S.Background>
 
-      <S.Header>
+      <Link to="/">
         <S.HeaderLogo>NEWS</S.HeaderLogo>
-      </S.Header>
+      </Link>
 
       {articlesStatus === Status.LOADING ? (
         <FullPageLoading />
