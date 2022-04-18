@@ -1,14 +1,14 @@
 <div align="center">
 
-[![license](https://img.shields.io/github/license/mucahidyazar/smartgift?color=dfd)](LICENSE)
+[![license](https://img.shields.io/github/license/mucahidyazar/works?color=dfd)](LICENSE)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-![](https://img.shields.io/github/repo-size/mucahidyazar/smartgift?label=Repo%20size&style=flat-square)
+![](https://img.shields.io/github/repo-size/mucahidyazar/works?label=Repo%20size&style=flat-square)
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-[Demo](https://smartgift.vercel.app/) •
-[Documentation](https://github.com/mucahidyazar/smartgift) •
-[Installation Instructions](https://github.com/mucahidyazar/smartgift) •
-[Reporting Issues](https://github.com/mucahidyazar/smartgift/pulls)
+[Demo](https://works-git-newyorktimes-mucahidyazar.vercel.app/) •
+[Documentation](https://github.com/mucahidyazar/works/tree/newyorktimes) •
+[Installation Instructions](https://github.com/mucahidyazar/works/tree/newyorktimes) •
+[Reporting Issues](https://github.com/mucahidyazar/works/pulls)
 
 </div>
 
@@ -27,7 +27,7 @@
 yarn && yarn dev
 ```
 
-4. Go [localhost:3000/vineyardvines/196286139913](http://localhost:3000/vineyardvines/196286139913)
+1. Go [localhost:3000](http://localhost:3000)
 
 <br />
 
@@ -37,23 +37,29 @@ yarn && yarn dev
 
 1. Vite
    It is new Javascript tool and so powerful in build and start
-2. LIGHT/DARK/DIM theme options
-3. Husky Integration
+2. Powerful pagination
+3. Beautiful UI Design
+4. Request Cache Management
+   By this way your request will be cached for an hour
+5. Lazy load images
+6. React Helment Integration
+   You can set your custom headers in pages thanks yo react-helmet
+7. Husky Integration
    You can't send your code before passing the husky checks (tests, lint, prettier)
-4. Commitizen Integration
+8. Commitizen Integration
    You can send you commits with semantic standarts
-5. Prettier Integration
+9. Prettier Integration
    Your codes will look amazing thanks to prettier
-6. Eslint Integration
-   You will follow best Javascript standarts and you won't write unusuless javascript codes thanks yo eslint
-7. Test setup with Jest
-   Everything is ready for writing unit tests
-8. Redux Toolkit Integration
-   You can follow the best practises of redux thanks to redux-toolkit
-9. Styled Components integration
-   You can use power of Javascript in styling
-10. Profesional SASS product folder structure
-11. @alias imports
+10. Eslint Integration
+    You will follow best Javascript standarts and you won't write unusuless javascript codes thanks yo eslint
+11. Test setup with Jest
+    Everything is ready for writing unit tests
+12. Redux Toolkit Integration
+    You can follow the best practises of redux thanks to redux-toolkit
+13. Styled Components integration
+    You can use power of Javascript in styling
+14. Profesional SASS product folder structure
+15. @alias imports
     You can import your import by aliases. It is so nice and easy to use
 
 <br />
@@ -73,6 +79,8 @@ yarn && yarn dev
 9. react-select
 10. react-toastify
 11. axios / axios-cache-adapter
+12. react-helmet
+13. react-lazy-load-image-component
 
 <br />
 
@@ -123,7 +131,7 @@ yarn && yarn dev
 
 - [https://github.com/typicode/husky](https://github.com/typicode/husky)
 
-- [https://github.com/mucahidyazar/smartgift](https://github.com/mucahidyazar/smartgift)
+- [https://github.com/mucahidyazar/works](https://github.com/mucahidyazar/works)
 
 - [https://vueschool.io/articles/vuejs-tutorials/import-aliases-in-vite/](https://vueschool.io/articles/vuejs-tutorials/import-aliases-in-vite/)
 

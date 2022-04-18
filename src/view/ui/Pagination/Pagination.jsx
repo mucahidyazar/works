@@ -67,7 +67,7 @@ const Pagination = ({
 
   const items = itemList.map((item, index) =>
     typeof item === 'number' ? (
-      <S.PageItem key={item}>
+      <S.PageItem data-testid="page-item" key={item}>
         <S.PageButton selected={currentPage === item} onClick={() => handleChange(item)}>
           {item}
         </S.PageButton>
@@ -82,13 +82,13 @@ const Pagination = ({
   return (
     <S.Wrapper data-testid="pagination">
       <S.Pagination>
-        <S.PageItem>
+        <S.PageItem data-testid="page-item">
           <S.PrevButton onClick={prev} disabled={currentPage === 1}>
             {prevText && <S.DirectionText>{prevText}</S.DirectionText>}
           </S.PrevButton>
         </S.PageItem>
         {items}
-        <S.PageItem>
+        <S.PageItem data-testid="page-item">
           <S.NextButton onClick={next} disabled={currentPage === maxPage}>
             {nextText && <S.DirectionText>{nextText}</S.DirectionText>}
           </S.NextButton>

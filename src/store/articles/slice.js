@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import { api } from '@config';
 import { Status } from '@constants';
 
-const initialState = {
+export const initialState = {
   status: Status.INIT,
   data: {},
   error: null
@@ -17,6 +17,7 @@ export const getArticles = createAsyncThunk('articles/get', async ({ page = 1, q
         import.meta.env.VITE_NYT_API_KEY
       }`
     );
+    console.log(data);
 
     return data.response;
   } catch (error) {
@@ -33,6 +34,7 @@ export const productDetail = createSlice({
       state.status = Status.LOADING;
     },
     [getArticles.fulfilled]: (state, action) => {
+      console.log(action);
       state.status = Status.OK;
       state.data = action.payload;
       state.selected = action.payload[0];
